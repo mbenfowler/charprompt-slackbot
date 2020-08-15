@@ -6,9 +6,9 @@ const app = express();
 const randomChar = require('./randomChar');
 
 const router = express.Router();
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.write(randomChar())
+  res.write(randomChar());
   res.end();
 });
 
