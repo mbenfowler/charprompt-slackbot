@@ -6,12 +6,14 @@ const app = express();
 const randomChar = require('./randomChar');
 
 const router = express.Router();
-router.get('/', (req, res) => {
+app.get('/', (req, res) => {
   res.json(randomChar())
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.end();
 });
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
-app.use('/', router);
+app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
 module.exports = app;
 module.exports.handler = serverless(app);
