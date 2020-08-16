@@ -15,12 +15,7 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     console.log({ body: req.body })
-    res.json({
-        "response_type": "ephemeral",
-        "replace_original": true,
-        "delete_original": true,
-        "text": ""
-    })
+    res.sendStatus(200);
     axios.post(req.body.request_url, {
         "response_type": "in_channel",
         "text": randomChar(),
