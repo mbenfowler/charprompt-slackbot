@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
   });
 });
 router.post('/', (req, res) =>  res.json({
-    "response_type": "ephemeral",
+    "delete_original": "true",
+    "response_type": "in_channel",
     "text": randomChar()
   }));
 
