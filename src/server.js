@@ -16,12 +16,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log({ body: req.body })
     res.sendStatus(200);
-    axios.request(axios({
-        method: 'post',
-        url: 'https://hooks.slack.com/commands/TMZC46FDL/1304174563619/YwVKX9nZqnpjIWwOUeL9f7JI', //req.body.request_url,
-        responseType: 'application/json'
-      }), { "data": {
-        "replace_original": "true",
+    axios.post(axios(req.body.response_url), { "data": {        "replace_original": "true",
         "delete_original": "true",
         "response_type": "in_channel",
         "text": randomChar(),
