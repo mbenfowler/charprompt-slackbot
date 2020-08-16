@@ -16,7 +16,8 @@ router.post('/', (req, res) =>  {
     console.log({query: req.query})
     res.json({
     "delete_original": true,
-    "response_type": "in_channel",
+    "replace_original": true,
+    "response_type": "ephemeral",
     "text": randomChar(),
     "blocks": [
 		{
