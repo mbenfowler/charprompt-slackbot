@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     console.log({ body: req.body })
-    res.sendStatus(200);
+    res.writeHead(200, { 'content-type': 'text/html' });
+    res.end()
     axios.post(req.body.response_url, {
         "data": {
             "replace_original": "true",
