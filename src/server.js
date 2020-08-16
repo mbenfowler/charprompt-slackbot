@@ -16,7 +16,10 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log({ body: req.body })
     res.json({
+        "response_type": "ephemeral",
+        "replace_original": true,
         "delete_original": true,
+        "text": ""
     })
     axios.post(req.body.request_url, {
         "response_type": "in_channel",
@@ -40,13 +43,13 @@ router.post('/', (req, res) => {
             }
         ]
     })
-    .then((res) => {
-        console.log(`statusCode: ${res.statusCode}`)
-        console.log(res)
-    })
-    .catch((error) => {
-        console.error(error)
-    })
+        .then((res) => {
+            console.log(`statusCode: ${res.statusCode}`)
+            console.log(res)
+        })
+        .catch((error) => {
+            console.error(error)
+        })
 });
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/.netlify/functions/server', router);  // path must route to lambda
