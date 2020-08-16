@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.json({
     "response_type": "in_channel",
+    "delete_original": "true",
     "text": randomChar()
   });
 });
