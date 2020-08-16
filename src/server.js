@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     console.log({ body: req.body })
-    res.sendStatus(200);
-    axios.post(axios(req.body.response_url), { "data": {        "replace_original": "true",
+    res.json({"text": ""});
+    axios.post(req.body.response_url, { "data": {        "replace_original": "true",
         "delete_original": "true",
         "response_type": "in_channel",
         "text": randomChar(),
