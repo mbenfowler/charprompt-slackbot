@@ -8,14 +8,12 @@ const randomChar = require('./randomCharacter');
 const router = express.Router();
 router.get('/', (req, res) => {
   res.json({
-    "response_type": "in_channel",
-    "delete_original": "true",
+    "response_type": "ephemeral",
     "text": randomChar()
   });
 });
 router.post('/', (req, res) =>  res.json({
-    "response_type": "in_channel",
-    "delete_original": "true",
+    "response_type": "ephemeral",
     "text": randomChar()
   }));
 
