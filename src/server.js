@@ -11,7 +11,10 @@ router.get('/', (req, res) => {
     "text": randomChar()
   });
 });
-router.post('/', (req, res) =>  res.json({
+router.post('/', (req, res) =>  {
+    console.log({req})
+    console.log({query: req.query})
+    res.json({
     "delete_original": true,
     "response_type": "in_channel",
     "text": randomChar(),
@@ -33,7 +36,7 @@ router.post('/', (req, res) =>  res.json({
 			}
 		}
 	]
-  }));
+  })});
 
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
