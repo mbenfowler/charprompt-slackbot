@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) =>  res.json({
     "response_type": "in_channel",
+    "delete_original": "true",
     "text": randomChar()
   }));
 
