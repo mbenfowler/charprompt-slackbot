@@ -2,6 +2,7 @@
 const path = require('path');
 const express = require('express');
 const serverless = require('serverless-http');
+const bodyParser = require('body-parser')
 const app = express();
 const randomChar = require('./randomCharacter');
 
@@ -12,7 +13,6 @@ router.get('/', (req, res) => {
   });
 });
 router.post('/', (req, res) =>  {
-    console.log({req})
     console.log({query: req.query})
     res.json({
     "delete_original": true,
@@ -37,7 +37,7 @@ router.post('/', (req, res) =>  {
 		}
 	]
   })});
-
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/.netlify/functions/server', router);  // path must route to lambda
 app.use('/', (req, res) => res.sendFile(path.join(__dirname, '../index.html')));
 
