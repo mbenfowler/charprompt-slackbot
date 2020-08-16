@@ -1,5 +1,5 @@
 {
-    "template":  "@adjective @race @dclass from @location who @backstory",
+    "template":  "_:sparkles: @adjective @race @dclass from @location who @backstory :sparkles:_",
     "adjective": [
         "bigoted",
         "bitchy",
