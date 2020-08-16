@@ -15,30 +15,33 @@ router.get('/', (req, res) => {
 });
 router.post('/', (req, res) => {
     console.log({ body: req.body })
-    res.json({"text": ""});
-    axios.post(req.body.response_url, { "data": {        "replace_original": "true",
-        "delete_original": "true",
-        "response_type": "in_channel",
-        "text": randomChar(),
-        "blocks": [
-            {
-                "type": "context",
-                "elements": [
-                    {
+    res.sendStatus(200);
+    axios.post(req.body.response_url, {
+        "data": {
+            "replace_original": "true",
+            "delete_original": "true",
+            "response_type": "in_channel",
+            "text": randomChar(),
+            "blocks": [
+                {
+                    "type": "context",
+                    "elements": [
+                        {
+                            "type": "mrkdwn",
+                            "text": `:crystal_ball: ${req.body.user_name} summoned me!`
+                        }
+                    ]
+                },
+                {
+                    "type": "section",
+                    "text": {
                         "type": "mrkdwn",
-                        "text": `:crystal_ball: ${req.body.user_name} summoned me!`
+                        "text": randomChar(),
                     }
-                ]
-            },
-            {
-                "type": "section",
-                "text": {
-                    "type": "mrkdwn",
-                    "text": randomChar(),
                 }
-            }
-        ]
-    }})
+            ]
+        }
+    })
         .then((res) => {
             console.log(`statusCode: ${res.statusCode}`)
             console.log(res)
