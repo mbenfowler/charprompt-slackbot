@@ -18,7 +18,6 @@ router.post('/', (req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' });
     res.end()
     axios.post(req.body.response_url, {
-        "data": {
             "replace_original": "true",
             "delete_original": "true",
             "response_type": "in_channel",
@@ -42,7 +41,7 @@ router.post('/', (req, res) => {
                 }
             ]
         }
-    })
+    )
         .then((res) => {
             console.log(`statusCode: ${res.statusCode}`)
             console.log(res)
