@@ -17,7 +17,7 @@ router.post('/', (req, res) =>  {
     res.json({
     "delete_original": true,
     "replace_original": true,
-    "response_type": "ephemeral",
+    "response_type": "in_channel",
     "text": randomChar(),
     "blocks": [
 		{
