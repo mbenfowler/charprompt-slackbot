@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
-const randomChar = require('./randomChar');
+const randomChar = require('./randomCharacter');
 
 const router = express.Router();
 router.get('/', (req, res) => {
