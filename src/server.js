@@ -24,7 +24,7 @@ router.post('/', (req, res) =>  {
 			"elements": [
 				{
 					"type": "mrkdwn",
-					"text": `:crystal_ball: ${req.query.user_name} summoned me!`
+					"text": `:crystal_ball: ${req.body.user_name} summoned me!`
 				}
 			]
 		},
