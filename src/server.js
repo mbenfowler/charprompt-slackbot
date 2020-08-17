@@ -13,9 +13,8 @@ router.get('/', (req, res) => {
   });
 });
 router.post('/', (req, res) =>  {
-    console.log({query: req.query})
+    console.log({body: req.body})
     res.json({
-    "delete_original": true,
     "response_type": "in_channel",
     "text": randomChar(),
     "blocks": [
