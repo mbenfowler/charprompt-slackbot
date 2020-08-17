@@ -18,9 +18,7 @@ router.post('/', (req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' });
     res.end()
     axios.post(req.body.response_url, {
-            "replace_original": "true",
-            "delete_original": "true",
-            "response_type": "in_channel",
+            "response_type": "ephemeral",
             "text": randomChar(),
             "blocks": [
                 {
