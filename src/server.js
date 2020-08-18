@@ -13,10 +13,11 @@ router.get('/', (req, res) => {
     });
 });
 router.post('/', (req, res) => {
+    const character = randomChar()
     console.log({ body: req.body })
     res.json({
         "response_type": "in_channel",
-        "text": randomChar(),
+        "text": character,
         "blocks": [
             {
                 "type": "context",
@@ -31,7 +32,7 @@ router.post('/', (req, res) => {
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": randomChar(),
+                    "text": character,
                 }
             }
         ]
