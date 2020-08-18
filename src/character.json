@@ -165,7 +165,30 @@
         "Half-orc",
         "Halfling",
         "Human",
-        "Tiefling"
+        "Tiefling",
+        "Bugbear",
+        "Centaur",
+        "Goblin",
+        "Grung",
+        "Hobgoblin",
+        "Kobold",
+        "Lizardfolk",
+        "Minotaur",
+        "Orc",
+        "Yuan-Ti Pureblood",
+        "Aarakocra",
+        "Aasimar",
+        "Firbolg",
+        "Genasi",
+        "Gith",
+        "Goliath",
+        "Kenku",
+        "Loxodon",
+        "Satyr",
+        "Tabaxi",
+        "Tortle",
+        "Triton",
+        "Warforged"
     ],
     "dclass": [
         "Fighter",
@@ -178,7 +201,9 @@
         "Paladin",
         "Ranger",
         "Sorcerer",
-        "Warlock"
+        "Warlock",
+        "Cleric",
+        "Artificer"
     ],
     "location": [
         "a tiny village",
